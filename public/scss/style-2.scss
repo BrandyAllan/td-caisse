@@ -1,61 +1,74 @@
+@import 'achat'; 
+
+// Reset de base pour éviter les marges blanches
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
+    height: 60px; // Hauteur fixe pour le calcul du main
     background-color: rgb(9, 9, 49);
 
-    p {
-        color: whitesmoke;
-    }
-
-    a {
-        color: whitesmoke;
-        text-decoration: underline;
-    }
+    p { color: whitesmoke; margin: 0; }
+    a { color: whitesmoke; text-decoration: underline; }
 }
 
 main {
     display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 1fr;
+    grid-template-columns: 250px 1fr; // Sidebar fixe, le reste prend tout l'espace
     gap: 20px;
     padding: 20px;
     background-color: rgb(226, 225, 225);
+    
+// CORRECTION MAJEURE ICI
+    height: calc(100vh - 120px); // On force la hauteur parfaite
+    box-sizing: border-box; // Inclut le padding dans le calcul de la hauteur
+    overflow: hidden; // Empêche le scroll sur la page entière (body/main)
+
 
     .sidebar-caisse {
-        grid-column: 1 / 2;
         background-color: whitesmoke;
         border-radius: 10px;
         padding: 20px;
-        box-shadow: rgb(180, 179, 179) 0px 4px 8px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+        height: fit-content; // Reste compacte
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-
-            li {
-                margin-bottom: 10px;
-
-                a {
-                    text-decoration: none;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
+        h2 { font-size: 1.2rem; color: #2d3436; margin-top: 0; }
+        // ... (ton reste de code ul/li/a inchangé)
     }
 
     .content-caisse {
-        grid-column: 2 / 3;
-        background-color: whitesmoke;
-        border-radius: 10px;
-        padding: 20px;
-        height: min-content;
-        box-shadow: rgb(180, 179, 179) 0px 4px 8px;
+            @extend .main-content; // On récupère le style POS de achat.scss
+            background-color: transparent !important; // On laisse le gris de main
+            padding: 0 !important; // Enlève le padding supplémentaire
+            height: 100% !important; // Prend toute la hauteur du grid cell parent
+            overflow: hidden; // Prépare le scroll interne pour le tableau
+            display: flex;
+            flex-direction: column;
+
+        .title-content {
+            color: #2d3436;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        // On compresse le formulaire pour gagner de la hauteur
+        .saisie-achat {
+            margin-bottom: 1rem !important; // Réduit la marge avec le tableau
+            padding: 15px 25px !important; // Plus fin
+        }
+
+        // On rend l'affichage des achats scrollable SI NÉCESSAIRE
+        .affichage-achats {
+            flex-grow: 1; // Remplit l'espace restant
+            overflow-y: auto; // Crée le scroll interne si la liste est longue
+            padding: 15px 20px !important; // Plus fin
+        }
     }
 }
 
@@ -63,9 +76,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 60px;
     background-color: rgb(9, 9, 49);
-
-    p {
-        color: whitesmoke;
-    }
+    p { color: whitesmoke; margin: 0; }
 }

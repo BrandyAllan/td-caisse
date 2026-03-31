@@ -1,0 +1,135 @@
+// Nouvelles variables pour un look "Software POS"
+$pos-dark: #2d3436;
+$pos-accent: #0984e3;
+$pos-success: #00b894;
+$table-stripe: #f1f2f6;
+
+.main-content {
+        height: calc(100vh - 120px); 
+        display: flex;
+        flex-direction: column;
+        padding: 1rem !important; // Réduction du padding global
+        overflow: hidden; // Empêche le scroll sur la page entière
+        
+    .saisie-achat {
+        background-color: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        margin-bottom: 2rem;
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            gap: 15px;
+
+            &.titre-achat {
+                display: flex;
+                justify-content: space-between;
+                background: linear-gradient(135deg, $pos-dark, #485460);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                grid-column: 1 / -1; // Prend toute la largeur
+                margin-bottom: 25px;
+                
+                h3 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+                p { font-size: 1.4rem; font-family: 'Courier New', Courier, monospace; }
+            }
+
+            label {
+                color: $pos-dark;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            select, input {
+                padding: 12px;
+                border: 2px solid #dfe6e9;
+                border-radius: 6px;
+                transition: border-color 0.3s;
+                &:focus { border-color: $pos-accent; outline: none; }
+            }
+        }
+
+        .btn-valider {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 10px;
+            padding: 15px;
+            background-color: $pos-accent;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 6px;
+            transition: transform 0.1s, background 0.3s;
+            
+            &:hover { background-color: darken($pos-accent, 10%); cursor: pointer; }
+            &:active { transform: scale(0.98); }
+        }
+    }
+
+    .affichage-achats {
+        background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 5px;
+
+            th {
+                background-color: transparent;
+                color: #636e72;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                padding: 15px;
+            }
+
+            td {
+                background-color: $table-stripe;
+                padding: 15px;
+                &:first-child { border-radius: 8px 0 0 8px; font-weight: bold; }
+                &:last-child { border-radius: 0 8px 8px 0; text-align: right; }
+            }
+
+            tfoot tr td {
+                background-color: transparent;
+                border-top: 2px dashed #b2bec3;
+                padding-top: 25px;
+                font-size: 1.8rem;
+                color: $pos-dark;
+                text-align: right;
+                
+                strong:last-child {
+                    color: $pos-success;
+                    margin-left: 15px;
+                }
+            }
+        }
+
+        .actions-finales {
+            margin-top: 10px;
+            text-align: right;
+
+            .btn-cloturer {
+                background-color: $pos-success;
+                color: white;
+                font-size: 1.1rem;
+                padding: 15px 40px;
+                border-radius: 50px; 
+                border: none;
+                font-weight: bold;
+                box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+                
+                &:hover { background-color: darken($pos-success, 5%); cursor: pointer; }
+            }
+        }
+    }
+}

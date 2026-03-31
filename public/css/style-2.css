@@ -1,13 +1,156 @@
+.main-content, main .content-caisse {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem !important;
+  overflow: hidden;
+}
+.main-content .saisie-achat, main .content-caisse .saisie-achat {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+.main-content .saisie-achat .form-group, main .content-caisse .saisie-achat .form-group {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  gap: 15px;
+}
+.main-content .saisie-achat .form-group.titre-achat, main .content-caisse .saisie-achat .form-group.titre-achat {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #2d3436, #485460);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  grid-column: 1/-1;
+  margin-bottom: 25px;
+}
+.main-content .saisie-achat .form-group.titre-achat h3, main .content-caisse .saisie-achat .form-group.titre-achat h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.main-content .saisie-achat .form-group.titre-achat p, main .content-caisse .saisie-achat .form-group.titre-achat p {
+  font-size: 1.4rem;
+  font-family: "Courier New", Courier, monospace;
+}
+.main-content .saisie-achat .form-group label, main .content-caisse .saisie-achat .form-group label {
+  color: #2d3436;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.main-content .saisie-achat .form-group select, main .content-caisse .saisie-achat .form-group select, .main-content .saisie-achat .form-group input, main .content-caisse .saisie-achat .form-group input {
+  padding: 12px;
+  border: 2px solid #dfe6e9;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+.main-content .saisie-achat .form-group select:focus, main .content-caisse .saisie-achat .form-group select:focus, .main-content .saisie-achat .form-group input:focus, main .content-caisse .saisie-achat .form-group input:focus {
+  border-color: #0984e3;
+  outline: none;
+}
+.main-content .saisie-achat .btn-valider, main .content-caisse .saisie-achat .btn-valider {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #0984e3;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  transition: transform 0.1s, background 0.3s;
+}
+.main-content .saisie-achat .btn-valider:hover, main .content-caisse .saisie-achat .btn-valider:hover {
+  background-color: rgb(7.0550847458, 103.4745762712, 177.9449152542);
+  cursor: pointer;
+}
+.main-content .saisie-achat .btn-valider:active, main .content-caisse .saisie-achat .btn-valider:active {
+  transform: scale(0.98);
+}
+.main-content .affichage-achats, main .content-caisse .affichage-achats {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.main-content .affichage-achats table, main .content-caisse .affichage-achats table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+.main-content .affichage-achats table th, main .content-caisse .affichage-achats table th {
+  background-color: transparent;
+  color: #636e72;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding: 15px;
+}
+.main-content .affichage-achats table td, main .content-caisse .affichage-achats table td {
+  background-color: #f1f2f6;
+  padding: 15px;
+}
+.main-content .affichage-achats table td:first-child, main .content-caisse .affichage-achats table td:first-child {
+  border-radius: 8px 0 0 8px;
+  font-weight: bold;
+}
+.main-content .affichage-achats table td:last-child, main .content-caisse .affichage-achats table td:last-child {
+  border-radius: 0 8px 8px 0;
+  text-align: right;
+}
+.main-content .affichage-achats table tfoot tr td, main .content-caisse .affichage-achats table tfoot tr td {
+  background-color: transparent;
+  border-top: 2px dashed #b2bec3;
+  padding-top: 25px;
+  font-size: 1.8rem;
+  color: #2d3436;
+  text-align: right;
+}
+.main-content .affichage-achats table tfoot tr td strong:last-child, main .content-caisse .affichage-achats table tfoot tr td strong:last-child {
+  color: #00b894;
+  margin-left: 15px;
+}
+.main-content .affichage-achats .actions-finales, main .content-caisse .affichage-achats .actions-finales {
+  margin-top: 10px;
+  text-align: right;
+}
+.main-content .affichage-achats .actions-finales .btn-cloturer, main .content-caisse .affichage-achats .actions-finales .btn-cloturer {
+  background-color: #00b894;
+  color: white;
+  font-size: 1.1rem;
+  padding: 15px 40px;
+  border-radius: 50px;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+}
+.main-content .affichage-achats .actions-finales .btn-cloturer:hover, main .content-caisse .affichage-achats .actions-finales .btn-cloturer:hover {
+  background-color: rgb(0, 158.5, 127.4891304348);
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px;
+  height: 60px;
   background-color: rgb(9, 9, 49);
 }
 header p {
   color: whitesmoke;
+  margin: 0;
 }
 header a {
   color: whitesmoke;
@@ -16,49 +159,59 @@ header a {
 
 main {
   display: grid;
-  grid-template-columns: 25% 75%;
-  grid-template-rows: 1fr;
+  grid-template-columns: 250px 1fr;
   gap: 20px;
   padding: 20px;
   background-color: rgb(226, 225, 225);
+  height: calc(100vh - 120px);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 main .sidebar-caisse {
-  grid-column: 1/2;
   background-color: whitesmoke;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: rgb(180, 179, 179) 0px 4px 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  height: fit-content;
 }
-main .sidebar-caisse ul {
-  list-style-type: none;
-  padding: 0;
-}
-main .sidebar-caisse ul li {
-  margin-bottom: 10px;
-}
-main .sidebar-caisse ul li a {
-  text-decoration: none;
-}
-main .sidebar-caisse ul li a:hover {
-  text-decoration: underline;
+main .sidebar-caisse h2 {
+  font-size: 1.2rem;
+  color: #2d3436;
+  margin-top: 0;
 }
 main .content-caisse {
-  grid-column: 2/3;
-  background-color: whitesmoke;
-  border-radius: 10px;
-  padding: 20px;
-  height: min-content;
-  box-shadow: rgb(180, 179, 179) 0px 4px 8px;
+  background-color: transparent !important;
+  padding: 0 !important;
+  height: 100% !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+main .content-caisse .title-content {
+  color: #2d3436;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+main .content-caisse .saisie-achat {
+  margin-bottom: 1rem !important;
+  padding: 15px 25px !important;
+}
+main .content-caisse .affichage-achats {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px 20px !important;
 }
 
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 60px;
   background-color: rgb(9, 9, 49);
 }
 footer p {
   color: whitesmoke;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style-2.css.map */
