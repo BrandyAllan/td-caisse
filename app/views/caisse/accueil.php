@@ -1,3 +1,6 @@
+<?php
+    echo count($caisses);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +13,20 @@
     <main>
         <section class="main-content">
     <div class="selection-caisse-container">
-        <h2 class="title-content">Initialisation de la Session</h2>
+        <h2 class="title-content">Bienvenue dans la caisse</h2>
         
-        <form action="valider-caisse" method="POST" class="form-selection">
+        <form action="caisse" method="POST" class="form-selection">
             <div class="form-group-caisse">
-                <label for="caisse">Choisir Caisse [cite: 37]</label>
+                <label for="caisse">Choisir Caisse</label>
                 <select name="id_caisse" id="caisse" required>
                     <option value="">-- Sélectionner une caisse --</option>
-                    <option value="1">Caisse 01</option>
-                    <option value="2">Caisse 02</option>
+                    <?php 
+                        foreach ($caisses as $c) {
+                    ?>
+                        <option value="<?= $c['id_caisse'] ?>">Caisse <?= $c['id_caisse'] ?></option>
+                    <?php
+                        }
+                    ?>
                 </select>
             </div>
 

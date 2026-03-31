@@ -9,7 +9,7 @@
     <body>
         <header>
             <p>TD - SI - IHM - <?= $caisse['nom_caisse'] ?></p>
-            <a href="#">Changer de caisse</a>
+            <a href="/accueil-caisse">Changer de caisse</a>
         </header>
         <main>
             <section class="sidebar-caisse">

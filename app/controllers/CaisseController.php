@@ -7,9 +7,24 @@ class CaisseController {
         $this->caisseRepository = $caisseRepository;
     }
 
-    public static function showCaisse($idcaisse) {
+    public static function chooseCaisse() {
         $pdo = Flight::db();
         $repo = new CaisseRepository($pdo);
+
+        $caisses = $repo->getAllCaisse();
+
+        Flight::render('caisse/accueil', [
+            'caisses' => $caisses
+        ]);
+    }
+
+    public static function showCaisse() {
+        $pdo = Flight::db();
+        $repo = new CaisseRepository($pdo);
+
+        $req = Flight::request();
+
+        $idcaisse = $req->data->id_caisse;
 
         $caisse = $repo->getCaisseById($idcaisse);
 

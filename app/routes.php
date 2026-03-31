@@ -14,4 +14,5 @@ Flight::route('GET /logout', ['AuthController', 'showLogin']);
 Flight::route('POST /api/validate/register', ['AuthController', 'validateRegisterAjax']);
 Flight::route('POST /api/validate/login', ['AuthController', 'validateLoginAjax']);
 
-Flight::route('GET /caisse/@idcaisse', ['CaisseController', 'showCaisse']);
+Flight::route('GET /accueil-caisse', ['CaisseController', 'chooseCaisse']);
+Flight::route('POST /caisse', ['CaisseController', 'showCaisse']);
