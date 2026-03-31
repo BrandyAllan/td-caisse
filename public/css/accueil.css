@@ -1,0 +1,71 @@
+.main-content {
+  background-color: #f0f2f5;
+  height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.main-content .selection-caisse-container {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+.main-content .selection-caisse-container .title-content {
+  margin-bottom: 30px;
+  color: #2d3436;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.main-content .selection-caisse-container .form-selection .form-group-caisse {
+  margin-bottom: 25px;
+  text-align: left;
+}
+.main-content .selection-caisse-container .form-selection .form-group-caisse label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #2d3436;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.main-content .selection-caisse-container .form-selection .form-group-caisse select {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+.main-content .selection-caisse-container .form-selection .form-group-caisse select:focus {
+  border-color: #0984e3;
+  outline: none;
+}
+.main-content .selection-caisse-container .form-selection .btn-valider-caisse {
+  width: 100%;
+  padding: 15px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+.main-content .selection-caisse-container .form-selection .btn-valider-caisse:hover {
+  background-color: rgb(7.0550847458, 103.4745762712, 177.9449152542);
+}
+.main-content .selection-caisse-container .form-selection .btn-valider-caisse:active {
+  transform: scale(0.98);
+}
+
+/*# sourceMappingURL=accueil.css.map */

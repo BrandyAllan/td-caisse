@@ -1,0 +1,84 @@
+$pos-dark: #2d3436;
+$pos-accent: #0984e3;
+$border-light: #dfe6e9;
+
+.main-content {
+    background-color: #f0f2f5;
+    height: calc(100vh - 120px); // Ajuste pour remplir la fenêtre sans scroll
+    display: flex;
+    align-items: center;    // Centrage vertical
+    justify-content: center; // Centrage horizontal
+    padding: 20px;
+
+    .selection-caisse-container {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 450px; // Largeur fixe pour le formulaire
+        text-align: center;
+
+        .title-content {
+            margin-bottom: 30px;
+            color: $pos-dark;
+            text-decoration: none; // On enlève le soulignement pour ce titre précis
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .form-selection {
+            .form-group-caisse {
+                margin-bottom: 25px;
+                text-align: left; // Label aligné à gauche
+                
+                label {
+                    display: block;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                    color: $pos-dark;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                }
+
+                select {
+                    width: 100%;
+                    padding: 15px;
+                    border: 2px solid $border-light;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    background-color: #fff;
+                    cursor: pointer;
+                    transition: border-color 0.3s;
+
+                    &:focus {
+                        border-color: $pos-accent;
+                        outline: none;
+                    }
+                }
+            }
+
+            .btn-valider-caisse {
+                width: 100%;
+                padding: 15px;
+                background-color: $pos-accent;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-weight: bold;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: background 0.3s, transform 0.1s;
+
+                &:hover {
+                    background-color: darken($pos-accent, 10%);
+                }
+
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+        }
+    }
+}
