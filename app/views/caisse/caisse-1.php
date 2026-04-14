@@ -18,7 +18,7 @@
 
     <main>
         <aside class="aside-menu">
-            <h2 class="id-caisse">Caisse n°X</h2>
+            <h2 class="id-caisse">Caisse n°<?= $caisse['id_caisse'] ?></h2>
             <nav class="menu-content">
                 <ul>
                     <li><a href="#">Menu1</a></li>
