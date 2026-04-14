@@ -100,7 +100,7 @@
     </section>
     </main>
     <footer>
-        <p>Copyright &copy; Your Website 2025</p>
+        <p>Copyright &copy; Caisse 2026</p>
     </footer>
 </body>
 </html>
